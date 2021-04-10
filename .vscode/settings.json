@@ -25,5 +25,6 @@
    "editor.formatOnSave": true,
    "[html]": {
       "editor.defaultFormatter": "vscode.html-language-features"
-   }
+   },
+   "python.pythonPath": "c:\\Users\\ruszk\\Google Drive\\Learning\\CodeInstitute\\ci10-thorin\\venv\\Scripts\\python.exe"
 }
