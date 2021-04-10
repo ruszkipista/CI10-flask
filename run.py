@@ -1,10 +1,13 @@
 import os
 import json
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash
+if os.path.exists("env.py"):
+    import env
 
 # name of the application module or package (="__main__")
 # where should Flask look for templates and static files
 app = Flask(__name__)
+app.secret_key = os.environ.get("FLASH_KEY")
 
 @app.route("/")  # trigger point through webserver: "/"= root directory
 def index():
@@ -23,8 +26,11 @@ def member(member_url):
         member_data = list(filter(lambda x: x['url']==member_url, data))
     return render_template("member.html", member=member_data[0])
 
-@app.route("/contact")
+@app.route("/contact", methods=['GET','POST'])
 def contact():
+    if request.method == 'POST':
+        flash(f"Thanks {request.form.get('name')}, we have received your message!")
+
     return render_template("contact.html", page_title="Contact")
 
 @app.route("/careers")
