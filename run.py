@@ -40,6 +40,6 @@ def careers():
 # script runs as main, not as imported code
 if __name__ == "__main__":
     app.run(
-        host=os.environ.get("IP", "127.0.0.1"),  #get value or use given default
+        host=os.environ.get("IP", "0.0.0.0"),  #get value or use given default
         port=int(os.environ.get("PORT", "5500")),#get value or use given default
         debug=True)         # allow debugging, only for development phase
