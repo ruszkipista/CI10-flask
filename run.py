@@ -17,7 +17,7 @@ def index():
 def about():
     with open("./data/company.json", "r", encoding="UTF-8") as json_data:
         data = json.load(json_data)
-    return render_template("about.html", page_title="About", page_url='about', company=data)
+    return render_template("about.html", page_title="About", page_url=request.path, company=data)
 
 @app.route("/about/<member_url>")
 def member(member_url):
