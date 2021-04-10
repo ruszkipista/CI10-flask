@@ -11,23 +11,23 @@
     leave on other business, welcomed a fourteenth to fill into their party.
 </p>
 
-{% for dwarf in company %}
+{% for member in company %}
 <div class="row featurette">
     {% if loop.index%2 == 1 %}
     <div class="col-md-7">
-        <h3>{{ dwarf['name'] }}</h3>
-        <p>{{ dwarf['description'] }}</p>
+        <h3><a href="/{{ page_url }}/{{ member['url'] }}">{{ member['name'] }}</a></h3>
+        <p>{{ member['description'] }}</p>
     </div>
     <div class="col-md-5">
-        <img class="img-fluid featurette-image" src="{{ dwarf['image_source'] }}" alt="{{ dwarf['name'] }}">
+        <img class="img-fluid featurette-image" src="{{ member['image_source'] }}" alt="{{ member['name'] }}">
     </div>
     {% else %}
     <div class="col-md-5">
-        <img class="img-fluid featurette-image" src="{{ dwarf['image_source'] }}" alt="{{ dwarf['name'] }}">
+        <img class="img-fluid featurette-image" src="{{ member['image_source'] }}" alt="{{ member['name'] }}">
     </div>
     <div class="col-md-7">
-        <h3>{{ dwarf['name'] }}</h3>
-        <p>{{ dwarf['description'] }}</p>
+        <h3><a href="/{{ page_url }}/{{ member['url'] }}">{{ member['name'] }}</a></h3>
+        <p>{{ member['description'] }}</p>
     </div>
     {% endif %}
 </div>
