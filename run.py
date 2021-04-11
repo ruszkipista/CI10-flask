@@ -41,5 +41,5 @@ def careers():
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),  #get value or use given default
-        port=int(os.environ.get("PORT", "5500")),#get value or use given default
+        port=int(os.environ.get("PORT", "8080")),#get value or use given default
         debug=True)         # allow debugging, only for development phase
