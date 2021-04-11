@@ -41,6 +41,6 @@ def careers():
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("FLASK_IP", "0.0.0.0"),  #get value or use given default
-        port=int(os.environ.get("FLASK_PORT", "8080")),#get value or use given default
+        port=int(os.environ.get("PORT", "8080")),#get value or use given default
         # allow debugging, only for development phase
         debug = True if os.environ.get("FLASK_DEBUG", '').lower() == 'true' else False)
