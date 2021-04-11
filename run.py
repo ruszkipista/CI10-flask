@@ -7,7 +7,7 @@ if os.path.exists("env.py"):
 # name of the application module or package (="__main__")
 # where should Flask look for templates and static files
 app = Flask(__name__)
-app.secret_key = os.environ.get("FLASH_KEY")
+app.secret_key = os.environ.get("FLASK_FLASH_KEY")
 
 @app.route("/")  # trigger point through webserver: "/"= root directory
 def index():
@@ -40,6 +40,7 @@ def careers():
 # script runs as main, not as imported code
 if __name__ == "__main__":
     app.run(
-        host=os.environ.get("IP", "0.0.0.0"),  #get value or use given default
-        port=int(os.environ.get("PORT", "8080")),#get value or use given default
-        debug=True)         # allow debugging, only for development phase
+        host=os.environ.get("FLASK_IP", "0.0.0.0"),  #get value or use given default
+        port=int(os.environ.get("FLASK_PORT", "8080")),#get value or use given default
+        # allow debugging, only for development phase
+        debug = True if os.environ.get("FLASK_DEBUG", '').lower() == 'true' else False)
