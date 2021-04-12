@@ -4,4 +4,4 @@ This is a [Flask](https://flask.palletsprojects.com/) based demo website. Built 
 
 Hero image: [Devian Art](https://www.deviantart.com/art-calavera/art/The-Hobbit-Thorin-and-Company-341472935)
 
-The porject is deployed on [Heroku](https://heroku.com/)
+The project is deployed on [Heroku](https://heroku.com/)
